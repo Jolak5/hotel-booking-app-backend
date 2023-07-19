@@ -19,7 +19,7 @@ def create
 
   if @user.save
     token = encode_token({ user_id: @user.id })
-    render json: { user: @user, token: token }, status: :created
+    render json: { token: token }, status: :created
   else
     render json: @user.errors, status: :unprocessable_entity
   end
