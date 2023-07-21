@@ -5,6 +5,7 @@ class CreateHotels < ActiveRecord::Migration[7.0]
       t.string :description
       t.integer :duration
       t.decimal :price
+      t.string :image
 
       t.timestamps
     end
