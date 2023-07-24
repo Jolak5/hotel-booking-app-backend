@@ -26,3 +26,5 @@ gem 'bcrypt'
 gem 'jwt'
 
 gem 'rack-cors'
+
+gem 'active_model_serializers'
