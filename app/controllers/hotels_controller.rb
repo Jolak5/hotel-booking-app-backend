@@ -5,12 +5,12 @@ class HotelsController < ApplicationController
   def index
     @hotels = Hotel.all
 
-    render json: @hotels
+    render json: @hotels, each_serializer: HotelSerializer
   end
 
   # GET /hotels/1
   def show
-    render json: @hotel
+    render json: @hotel, serializer: HotelSerializer
   end
 
   # POST /hotels
@@ -47,6 +47,6 @@ class HotelsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def hotel_params
-    params.require(:hotel).permit(:name, :description, :duration, :price)
+    params.require(:hotel).permit(:name, :description, :duration, :price, :image)
   end
 end
