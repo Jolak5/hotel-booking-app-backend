@@ -3,8 +3,8 @@ class ReservationsController < ApplicationController
 
   # GET /reservations
   def index
-    @reservations = Reservation.all
-
+    @reservations = Reservation.includes(user: :hotels)
+  
     render json: @reservations
   end
 
@@ -47,6 +47,6 @@ class ReservationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reservation_params
-    params.fetch(:reservation, {})
+    params.permit(:user_id, :hotel_id, :reservation_date)
   end
 end
