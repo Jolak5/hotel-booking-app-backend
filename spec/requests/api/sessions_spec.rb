@@ -1,9 +1,7 @@
 require 'swagger_helper'
 
 describe 'Sessions API' do
-
   path '/sessions' do
-
     post 'Creates a new session (login)' do
       tags 'Sessions'
       consumes 'application/json'
@@ -13,7 +11,7 @@ describe 'Sessions API' do
           name: { type: :string },
           password: { type: :string }
         },
-        required: [ 'name', 'password' ]
+        required: %w[name password]
       }
 
       response '200', 'session created' do
