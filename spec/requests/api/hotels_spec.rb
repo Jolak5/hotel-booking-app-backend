@@ -1,9 +1,7 @@
 require 'swagger_helper'
 
 RSpec.describe 'Hotels API', type: :request do
-
   path '/hotels' do
-
     get 'Retrieves all hotels' do
       tags 'Hotels'
       produces 'application/json'
@@ -25,11 +23,13 @@ RSpec.describe 'Hotels API', type: :request do
           price: { type: :integer },
           image: { type: :string }
         },
-        required: ['name', 'description', 'duration', 'price', 'image']
+        required: %w[name description duration price image]
       }
 
       response '201', 'hotel created' do
-        let(:hotel) { { name: 'Test Hotel', description: 'This is a test', duration: 2, price: 100, image: 'image_url' } }
+        let(:hotel) do
+          { name: 'Test Hotel', description: 'This is a test', duration: 2, price: 100, image: 'image_url' }
+        end
         run_test!
       end
 
@@ -41,14 +41,16 @@ RSpec.describe 'Hotels API', type: :request do
   end
 
   path '/hotels/{id}' do
-
     get 'Retrieves a hotel' do
       tags 'Hotels'
       produces 'application/json'
       parameter name: :id, in: :path, type: :integer
 
       response '200', 'hotel found' do
-        let(:id) { Hotel.create(name: 'Test Hotel', description: 'This is a test', duration: 2, price: 100, image: 'image_url').id }
+        let(:id) do
+          Hotel.create(name: 'Test Hotel', description: 'This is a test', duration: 2, price: 100,
+                       image: 'image_url').id
+        end
         run_test!
       end
 
@@ -71,11 +73,14 @@ RSpec.describe 'Hotels API', type: :request do
           price: { type: :integer },
           image: { type: :string }
         },
-        required: ['name', 'description', 'duration', 'price', 'image']
+        required: %w[name description duration price image]
       }
 
       response '204', 'hotel updated' do
-        let(:id) { Hotel.create(name: 'Test Hotel', description: 'This is a test', duration: 2, price: 100, image: 'image_url').id }
+        let(:id) do
+          Hotel.create(name: 'Test Hotel', description: 'This is a test', duration: 2, price: 100,
+                       image: 'image_url').id
+        end
         let(:hotel) { { name: 'Updated Hotel' } }
         run_test!
       end
@@ -91,7 +96,10 @@ RSpec.describe 'Hotels API', type: :request do
       parameter name: :id, in: :path, type: :integer
 
       response '204', 'hotel deleted' do
-        let(:id) { Hotel.create(name: 'Test Hotel', description: 'This is a test', duration: 2, price: 100, image: 'image_url').id }
+        let(:id) do
+          Hotel.create(name: 'Test Hotel', description: 'This is a test', duration: 2, price: 100,
+                       image: 'image_url').id
+        end
         run_test!
       end
 

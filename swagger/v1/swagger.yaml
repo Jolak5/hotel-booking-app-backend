@@ -1,7 +1,7 @@
 ---
 openapi: 3.0.1
 info:
-  title: API V1
+  title: Hotel Booking App
   version: v1
 paths:
   "/hotels":
