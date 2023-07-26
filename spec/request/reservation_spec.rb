@@ -23,7 +23,8 @@ RSpec.describe 'Reservations', type: :request do
   describe 'POST /create' do
     it 'creates a reservation' do
       post('/reservations',
-           params: { reservation: { user_id: user.id, hotel_id: hotel.id, reservation_date: Date.tomorrow, duration: 2 } }, headers:)
+           params: { reservation: { user_id: user.id, 
+            hotel_id: hotel.id, reservation_date: Date.tomorrow, duration: 2 } }, headers:)
       expect(response.status).to eq(201)
     end
 
