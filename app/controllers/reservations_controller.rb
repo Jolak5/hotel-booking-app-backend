@@ -3,9 +3,9 @@ class ReservationsController < ApplicationController
 
   # GET /reservations
   def index
-    @reservations = Reservation.includes(:user, :hotel)
-  
-    render json: @reservations, include: [:user, :hotel]
+    @reservations = Reservation.includes(hotel: { image_attachment: :blob })
+
+    render json: @reservations, include: [:hotel], each_serializer: ReservationSerializer
   end
 
   # GET /reservations/1
