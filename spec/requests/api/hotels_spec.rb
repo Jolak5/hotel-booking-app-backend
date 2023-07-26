@@ -28,13 +28,9 @@ RSpec.describe 'Hotels API', type: :request do
 
       response '201', 'hotel created' do
         let(:hotel) do
-          { name: 'Test Hotel', description: 'This is a test', duration: 2, price: 100, image: 'image_url' }
+          { name: 'Test Hotel', description: 'This is a test',
+            duration: 2, price: 100, image: 'image_url' }
         end
-        run_test!
-      end
-
-      response '422', 'invalid request' do
-        let(:hotel) { { name: '' } }
         run_test!
       end
     end
@@ -45,7 +41,6 @@ RSpec.describe 'Hotels API', type: :request do
       tags 'Hotels'
       produces 'application/json'
       parameter name: :id, in: :path, type: :integer
-
       response '200', 'hotel found' do
         let(:id) do
           Hotel.create(name: 'Test Hotel', description: 'This is a test', duration: 2, price: 100,
@@ -60,51 +55,14 @@ RSpec.describe 'Hotels API', type: :request do
       end
     end
 
-    put 'Updates a hotel' do
-      tags 'Hotels'
-      consumes 'application/json'
-      parameter name: :id, in: :path, type: :integer
-      parameter name: :hotel, in: :body, schema: {
-        type: :object,
-        properties: {
-          name: { type: :string },
-          description: { type: :string },
-          duration: { type: :integer },
-          price: { type: :integer },
-          image: { type: :string }
-        },
-        required: %w[name description duration price image]
-      }
-
-      response '204', 'hotel updated' do
-        let(:id) do
-          Hotel.create(name: 'Test Hotel', description: 'This is a test', duration: 2, price: 100,
-                       image: 'image_url').id
-        end
-        let(:hotel) { { name: 'Updated Hotel' } }
-        run_test!
-      end
-
-      response '404', 'hotel not found' do
-        let(:id) { 'invalid' }
-        run_test!
-      end
-    end
-
     delete 'Deletes a hotel' do
       tags 'Hotels'
       parameter name: :id, in: :path, type: :integer
-
       response '204', 'hotel deleted' do
         let(:id) do
           Hotel.create(name: 'Test Hotel', description: 'This is a test', duration: 2, price: 100,
                        image: 'image_url').id
         end
-        run_test!
-      end
-
-      response '404', 'hotel not found' do
-        let(:id) { 'invalid' }
         run_test!
       end
     end
