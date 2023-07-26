@@ -35,6 +35,7 @@ class HotelsController < ApplicationController
 
   # DELETE /hotels/1
   def destroy
+    @hotel = Hotel.find(params[:id])
     @hotel.destroy
   end
 
