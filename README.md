@@ -43,7 +43,7 @@ This repository contains the backend code for the Hotel Room Booking application
 
 ## 🚀 API Documentation <a name="app-doc"></a>
 
-- [API Documentation](./swagger/v1/ApiDocumentation)
+- [API Documentation](./swagger/v1/ApiDocumentation.json)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
