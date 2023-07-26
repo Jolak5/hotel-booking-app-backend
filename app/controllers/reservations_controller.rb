@@ -3,9 +3,9 @@ class ReservationsController < ApplicationController
 
   # GET /reservations
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.includes(hotel: { image_attachment: :blob })
 
-    render json: @reservations
+    render json: @reservations, include: [:hotel], each_serializer: ReservationSerializer
   end
 
   # GET /reservations/1
@@ -47,6 +47,6 @@ class ReservationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reservation_params
-    params.fetch(:reservation, {})
+    params.require(:reservation).permit(:user_id, :hotel_id, :reservation_date, :duration)
   end
 end
