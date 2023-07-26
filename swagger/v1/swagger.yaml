@@ -4,6 +4,114 @@ info:
   title: API V1
   version: v1
 paths:
+  "/hotels":
+    get:
+      summary: Retrieves all hotels
+      tags:
+      - Hotels
+      responses:
+        '200':
+          description: hotels found
+    post:
+      summary: Creates a hotel
+      tags:
+      - Hotels
+      parameters: []
+      responses:
+        '201':
+          description: hotel created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                duration:
+                  type: integer
+                price:
+                  type: integer
+                image:
+                  type: string
+              required:
+              - name
+              - description
+              - duration
+              - price
+              - image
+  "/hotels/{id}":
+    get:
+      summary: Retrieves a hotel
+      tags:
+      - Hotels
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: hotel found
+        '404':
+          description: hotel not found
+    put:
+      summary: Updates a hotel
+      tags:
+      - Hotels
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: hotel updated
+        '404':
+          description: hotel not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                duration:
+                  type: integer
+                price:
+                  type: integer
+                image:
+                  type: string
+              required:
+              - name
+              - description
+              - duration
+              - price
+              - image
+    delete:
+      summary: Deletes a hotel
+      tags:
+      - Hotels
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: hotel deleted
+        '404':
+          description: hotel not found
   "/reservations":
     get:
       summary: Retrieves all reservations
