@@ -34,7 +34,9 @@ RSpec.describe 'Hotels', type: :request do
   describe 'POST /create' do
     it 'creates a hotel' do
       post('/hotels',
-           params: { hotel: { name: 'Hotel California', description: 'A lovely place', duration: 5, price: 200.0 } }, headers:)
+           params: { hotel: { name: 'Hotel California',
+                              description: 'A lovely place',
+                              duration: 5, price: 200.0 } }, headers:)
       expect(response.status).to eq(201)
     end
 
