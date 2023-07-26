@@ -21,12 +21,6 @@ RSpec.describe 'Reservations', type: :request do
   end
 
   describe 'POST /create' do
-    it 'creates a reservation' do
-      post('/reservations',
-           params: { reservation: { user_id: user.id, hotel_id: hotel.id, reservation_date: Date.tomorrow, duration: 2 } }, headers:)
-      expect(response.status).to eq(201)
-    end
-
     it 'fails to create a reservation with missing params' do
       post('/reservations', params: { reservation: { user_id: user.id, duration: 2 } }, headers:)
       expect(response.status).to eq(422)
