@@ -18,6 +18,7 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
+  - [Run tests](#Run-tests)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -126,6 +127,15 @@ To install this project in your local machine use
 To run the project, execute the following command:
 
 > rails server
+
+### Run tests
+
+ To run tests, execute the following commands:
+
+> rake db:test:prepare
+> rake db:test:prepare
+> rails db:migrate RAILS_ENV=test
+> rspec spec
 
 ## 👥 Authors <a name="authors"></a>
 
