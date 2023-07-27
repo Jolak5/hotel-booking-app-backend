@@ -63,9 +63,9 @@ This repository contains the backend code for the Hotel Room Booking application
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Final Capstone Baxk End <a name="final-capstone-back-end"></a>
+## Final Capstone Front End <a name="final-capstone-front-end"></a>
 
-- [ FINAL CAPSTONE BACK END link](https://github.com/Jolak5/hotel-booking-app-backend)
+- [ FINAL CAPSTONE FRONT END link](https://github.com/Jolak5/hotel-booking-app-frontend)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -101,11 +101,11 @@ You may also see any lint errors in the console.
 
 ### Setup
 
-> git clone https://github.com/Jolak5/hotel-booking-app-backend.git
-> cd hotel-booking-app-backend
-> rails db:create
-> rails db:migrate
-> rails db:seed
+- git clone https://github.com/Jolak5/hotel-booking-app-backend.git
+- cd hotel-booking-app-backend
+- rails db:create
+- rails db:migrate
+- rails db:seed
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -119,8 +119,8 @@ In order to run this project you only need:
 
 To install this project in your local machine use
 
-> bundle install
-> rails s
+- bundle install
+- rails s
 
 ### Usage
 
@@ -132,10 +132,9 @@ To run the project, execute the following command:
 
  To run tests, execute the following commands:
 
-> rake db:test:prepare
-> rake db:test:prepare
-> rails db:migrate RAILS_ENV=test
-> rspec spec
+- rake db:test:prepare
+- rails db:migrate RAILS_ENV=test
+- rspec spec
 
 ## 👥 Authors <a name="authors"></a>
 
