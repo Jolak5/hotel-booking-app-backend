@@ -9,6 +9,7 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+  - [Kanban Board](#kanban-board)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -30,13 +31,15 @@
 
 This repository contains the backend code for the Hotel Room Booking application. It is built using Ruby On Rails and Postgres database. and the [link](https://github.com/Jolak5/hotel-booking-app-frontend) to the front end.
 
-## 🚀 kanban board <a name="live-demo"></a>
+## 🚀 kanban board <a name="kanban-board"></a>
 
 <div > 
  
   <br/>
 
 - [kanban board Link](https://github.com/users/Jolak5/projects/2)
+
+- [Kanban board image](https://user-images.githubusercontent.com/54578700/253525520-10eb1d1b-0435-414d-a791-2e3f259a51ab.png)
 
 - We are a team of four members.
 
