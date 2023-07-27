@@ -54,7 +54,9 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "hotel_booking_app_backend_production"
+  config.active_storage.service_url_host = 'https://hotel-booking-7djb.onrender.com/'
 
+  config.action_mailer.default_url_options = { host: 'https://hotel-booking-7djb.onrender.com/' }
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.

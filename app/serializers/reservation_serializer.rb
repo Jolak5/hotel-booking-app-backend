@@ -17,7 +17,7 @@ class ReservationSerializer < ActiveModel::Serializer
   def get_image(hotel)
     if hotel.image.attached?
       {
-        url: rails_blob_url(hotel.image)
+        url: rails_blob_url(hotel.image, host: 'https://hotel-booking-7djb.onrender.com/')
       }
     else
       {
