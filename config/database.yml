@@ -17,4 +17,4 @@ test:
 
 production:
   <<: *default
-  database: hotel_booking_app_backend_production
+  url: <%= ENV['DATABASE_URL'] %>
