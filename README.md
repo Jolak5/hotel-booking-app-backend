@@ -74,7 +74,7 @@ This repository contains the backend code for the Hotel Room Booking application
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link - Coming Soon]
+- [Live Demo Link](https://hotel-booking-now.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
