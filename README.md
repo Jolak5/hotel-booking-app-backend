@@ -90,7 +90,7 @@ to run on your localhost clone the project to local folder
 
 In the project directory, you can run:
 
-### `npm start`
+### `rails s`
 
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -100,8 +100,11 @@ You may also see any lint errors in the console.
 
 ### Setup
 
-> <p> git clone https://github.com/Jolak5/hotel-booking-app-backend.git</p>
+> git clone https://github.com/Jolak5/hotel-booking-app-backend.git
 > cd hotel-booking-app-backend
+> rails db:create
+> rails db:migrate
+> rails db:seed
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,14 +118,14 @@ In order to run this project you only need:
 
 To install this project in your local machine use
 
-> gem install
+> bundle install
 > rails s
 
 ### Usage
 
 To run the project, execute the following command:
 
-> In visual studio code Go to dist folder then open index.html in live server.
+> rails server
 
 ## 👥 Authors <a name="authors"></a>
 
