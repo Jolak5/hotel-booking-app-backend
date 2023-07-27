@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-config.active_storage.service_url_host = 'https://your-render-app-url.com
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -54,7 +54,9 @@ config.active_storage.service_url_host = 'https://your-render-app-url.com
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "hotel_booking_app_backend_production"
+  config.active_storage.service_url_host = 'https://hotel-booking-7djb.onrender.com/'
 
+  config.action_mailer.default_url_options = { host: 'https://hotel-booking-7djb.onrender.com/' }
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -70,9 +72,7 @@ config.active_storage.service_url_host = 'https://your-render-app-url.com
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-  config.active_storage.service_url_host = 'https://hotel-booking-7djb.onrender.com/'
 
-  config.action_mailer.default_url_options = { host: 'https://hotel-booking-7djb.onrender.com/' }
   # Use a different logger for distributed setups.
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
